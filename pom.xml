@@ -43,7 +43,37 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <!--suppress UnresolvedMavenProperty -->
+                <database.user>${env.DEV}</database.user>
+                <!--suppress UnresolvedMavenProperty -->
+                <database.password>${env.DEV_PASSWORD}</database.password>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>prod</id>
+            <properties>
+                <!--suppress UnresolvedMavenProperty -->
+                <database.user>${env.USER}</database.user>
+                <!--suppress UnresolvedMavenProperty -->
+                <database.password>${env.USER_PASSWORD}</database.password>
+            </properties>
+        </profile>
+
+
+    </profiles>
+
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-jar-plugin -->
