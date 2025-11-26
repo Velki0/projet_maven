@@ -3,7 +3,9 @@ package fr.diginamic.swing;
 import javax.swing.*;
 import java.awt.*;
 
-
+/**
+ * Application qui permet d'afficher un Hello World grâce à Swing
+ */
 public class HelloFrame extends JFrame {
 
     public HelloFrame() {
